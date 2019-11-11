@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JSlider;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -22,6 +23,7 @@ public class KidAdder extends JFrame{
 	private static final long serialVersionUID = 1L;
 	
 	private SantasLists BigS = new SantasLists();
+	private Kid currentKid;
 	
 	/** Panels **/
 	JPanel panel0 = new JPanel(); //Header for kid name
@@ -31,6 +33,7 @@ public class KidAdder extends JFrame{
 	JPanel panel4 = new JPanel(); //Header for present
 	JPanel panel5 = new JPanel(); //text field for present
 	JPanel panel6 = new JPanel(); //add kid button
+	JPanel panel7 = new JPanel(); //Kids
 	
 	/** Headers **/
 	JLabel Header0 = new JLabel();
@@ -43,6 +46,9 @@ public class KidAdder extends JFrame{
 	JRadioButton nice = new JRadioButton("Nice");
 	JRadioButton naughty = new JRadioButton("Naughty");
 	JTextField present = new JTextField();
+	
+	/** Text Area **/
+	JTextArea kidsOut = new JTextArea(20, 20);
 	
 	/** Add kid button **/
 	JButton addKid = new JButton("Create kid");
@@ -98,10 +104,13 @@ public class KidAdder extends JFrame{
 					nn = true;
 				}
 				
-				BigS.addEntry(new Kid(kidName.getText(), present.getText(), nn));
+				currentKid = new Kid(kidName.getText(), present.getText(), nn);
+				BigS.addEntry(currentKid);
 				
 				kidName.setText("		");
 				present.setText("		");
+				
+				System.out.println(currentKid.toString());
 			}
 		});
 		
