@@ -1,5 +1,7 @@
 # Santa
 
+Authors - Tyler Sanbar, Kyle Weidner,
+
 This project displays a graphical window that allows for input of a kids name, their prefered present, and whether they are
 naughty or nice. If they are naughty they get coal, like they deserve.
 
