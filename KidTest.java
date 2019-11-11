@@ -20,6 +20,11 @@ class KidTest {
 		expected = "Jorp has been good this year and wants an eagle for Christmas.";
 		actual = jorp.toString();
 		assertEquals(expected,actual);
+		
+		Kid nobody = new Kid();
+		expected = "null has been bad this year and wants null for Christmas.";
+		actual = nobody.toString();
+		assertEquals(expected,actual);
 	}
 
 }
